@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://examenvialedomex.app/sitemap-index.xml
