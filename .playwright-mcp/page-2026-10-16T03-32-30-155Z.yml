@@ -1,0 +1,75 @@
+- generic [ref=e1]:
+  - link "Saltar al contenido" [ref=e2] [cursor=pointer]:
+    - /url: "#principal"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Examen Vial EdoMex — inicio" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e9]: Examen Vial EdoMex
+      - navigation "Secciones" [ref=e10]:
+        - link "Examen" [ref=e11] [cursor=pointer]:
+          - /url: /examen
+        - link "Guía" [ref=e12] [cursor=pointer]:
+          - /url: /guia
+        - link "Señales" [ref=e13] [cursor=pointer]:
+          - /url: /senales
+        - button "Cambiar entre tema claro y oscuro" [ref=e14]
+  - main [ref=e17]:
+    - generic [ref=e19]:
+      - generic [ref=e51]:
+        - paragraph [ref=e52]: Pregunta 1 de 10
+        - paragraph [ref=e53]: 4:59
+      - progressbar "Avance" [ref=e54]
+      - heading "¿Qué tipos de vehículos podrán circular con los vidrios polarizados?" [level=2] [ref=e55]
+      - list [ref=e56]:
+        - listitem [ref=e57]:
+          - button "Solo los vehículos con placas federales ✗ Incorrecta" [disabled] [ref=e74]:
+            - generic [aria-hidden] [ref=e59]: A
+            - generic [ref=e60]: Solo los vehículos con placas federales
+            - generic [ref=e75]: ✗ Incorrecta
+        - listitem [ref=e61]:
+          - button "Los taxis y transporte público" [disabled] [ref=e62]:
+            - generic [aria-hidden] [ref=e63]: B
+        - listitem [ref=e65]:
+          - button "Los vehículos que vengan instalados con vidrios polarizados desde la fábrica ✓ Correcta" [disabled] [ref=e76]:
+            - generic [aria-hidden] [ref=e67]: C
+            - generic [ref=e68]: Los vehículos que vengan instalados con vidrios polarizados desde la fábrica
+            - generic [ref=e77]: ✓ Correcta
+        - listitem [ref=e69]:
+          - button "Todos los vehículos particulares" [disabled] [ref=e70]:
+            - generic [aria-hidden] [ref=e71]: D
+      - generic [ref=e78]:
+        - paragraph [ref=e79]: Solo se permiten vidrios polarizados de fábrica. Los polarizados instalados posteriormente están prohibidos porque dificultan la identificación del conductor.
+        - button "Siguiente" [active] [ref=e80] [cursor=pointer]
+  - contentinfo [ref=e23]:
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - paragraph [ref=e26]: Examen Vial EdoMex
+        - paragraph [ref=e27]: Práctica gratuita del examen teórico para la licencia de conducir del Estado de México. Sin registro y sin instalar nada.
+        - link "Descargar la app" [ref=e28] [cursor=pointer]:
+          - /url: https://play.google.com/store/apps/details?id=com.jovasoft.examenvialedomex
+      - navigation "Practicar" [ref=e31]:
+        - paragraph [ref=e32]: Practicar
+        - list [ref=e33]:
+          - listitem [ref=e34]:
+            - link "Simulacro de examen" [ref=e35] [cursor=pointer]:
+              - /url: /examen
+          - listitem [ref=e36]:
+            - link "Quiz de señales" [ref=e37] [cursor=pointer]:
+              - /url: /quiz-senales
+          - listitem [ref=e38]:
+            - link "Guía por temas" [ref=e39] [cursor=pointer]:
+              - /url: /guia
+      - navigation "Consultar" [ref=e40]:
+        - paragraph [ref=e41]: Consultar
+        - list [ref=e42]:
+          - listitem [ref=e43]:
+            - link "Catálogo de señales" [ref=e44] [cursor=pointer]:
+              - /url: /senales
+          - listitem [ref=e45]:
+            - link "Guía oficial en PDF" [ref=e46] [cursor=pointer]:
+              - /url: /guia-de-manejo-pdf
+          - listitem [ref=e47]:
+            - link "Privacidad" [ref=e48] [cursor=pointer]:
+              - /url: /privacidad
+    - paragraph [ref=e50]: Las preguntas provienen de la guía de estudio de la Secretaría de Movilidad del Estado de México. Las señales son del Manual de Señalización Vial y Dispositivos de Seguridad (SICT), en dominio público. Este sitio no es un portal oficial del Gobierno del Estado de México ni tramita licencias.© 2026 Jovanny Ramírez

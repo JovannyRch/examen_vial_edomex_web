@@ -1,0 +1,158 @@
+- generic [active] [ref=f30e1]:
+  - link "Saltar al contenido" [ref=f30e2] [cursor=pointer]:
+    - /url: "#principal"
+  - banner [ref=f30e3]:
+    - generic [ref=f30e4]:
+      - link "Examen Vial EdoMex — inicio" [ref=f30e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f30e9]: EdoMex
+      - navigation "Secciones" [ref=f30e10]:
+        - link "Examen" [ref=f30e11] [cursor=pointer]:
+          - /url: /examen
+        - link "Guía" [ref=f30e12] [cursor=pointer]:
+          - /url: /guia
+        - link "Señales" [ref=f30e13] [cursor=pointer]:
+          - /url: /senales
+        - button "Cambiar entre tema claro y oscuro" [ref=f30e14]
+  - main [ref=f30e17]:
+    - navigation "Ruta" [ref=f30e18]:
+      - link "Guía" [ref=f30e19] [cursor=pointer]:
+        - /url: /guia
+      - text: / Circulación
+    - heading "Circulación" [level=1] [ref=f30e20]
+    - paragraph [ref=f30e21]: Velocidades permitidas, rebases, carriles y reglas de circulación en el EdoMex.
+    - list [ref=f30e22]:
+      - listitem [ref=f30e23]:
+        - heading "1. En centros educativos, oficinas públicas hospitales o cualquier otro lugar de reunión ¿Cuál es el límite de velocidad permitido para circular?" [level=2] [ref=f30e24]
+        - list [ref=f30e25]:
+          - listitem [ref=f30e26]: "✓ Correcta: 20 kilómetros por hora"
+          - listitem [ref=f30e27]: 10 kilómetros por hora
+          - listitem [ref=f30e28]: 30 kilómetros por hora
+          - listitem [ref=f30e29]: 40 kilómetros por hora
+        - paragraph [ref=f30e30]: En zonas con alta concentración de personas (escuelas, hospitales, oficinas públicas), el límite se reduce a 20 km/h para proteger la vida de peatones.
+      - listitem [ref=f30e31]:
+        - heading "2. ¿Bajo qué circunstancias es permitida la vuelta a la derecha?" [level=2] [ref=f30e32]
+        - list [ref=f30e33]:
+          - listitem [ref=f30e34]: "✓ Correcta: En ningún caso"
+          - listitem [ref=f30e35]: Cuando el semáforo esté en verde
+          - listitem [ref=f30e36]: Cuando no vengan peatones
+          - listitem [ref=f30e37]: En carreteras rurales
+        - paragraph [ref=f30e38]: En el Estado de México, la vuelta a la derecha con semáforo en rojo NO está permitida bajo ninguna circunstancia, a diferencia de otras entidades.
+      - listitem [ref=f30e39]:
+        - heading "3. ¿En qué caso pueden circular los vehículos de servicio público por los carriles centrales de las vías primarias?" [level=2] [ref=f30e40]
+        - list [ref=f30e41]:
+          - listitem [ref=f30e42]: "✓ Correcta: En ningún caso"
+          - listitem [ref=f30e43]: Cuando vayan sin pasajeros
+          - listitem [ref=f30e44]: Cuando lo permita el semáforo
+          - listitem [ref=f30e45]: Cuando se trate de un taxi
+        - paragraph [ref=f30e46]: Los vehículos de servicio público deben circular exclusivamente por los carriles laterales. Los carriles centrales están reservados para vehículos particulares.
+      - listitem [ref=f30e47]:
+        - heading "4. ¿Qué casos están prohibidos realizar en la vía pública?" [level=2] [ref=f30e48]
+        - list [ref=f30e49]:
+          - listitem [ref=f30e50]: "✓ Correcta: Efectuar carreras o \"arrancones\" o situar cualquier otro objeto que obstaculice o afecte la vialidad"
+          - listitem [ref=f30e51]: Circular en horarios nocturnos
+          - listitem [ref=f30e52]: Usar luces intermitentes en zonas escolares
+          - listitem [ref=f30e53]: Rebasar en avenidas principales
+        - paragraph [ref=f30e54]: Las carreras callejeras ("arrancones") y obstruir la vialidad con objetos están estrictamente prohibidos por poner en riesgo la seguridad de todos los usuarios de la vía.
+      - listitem [ref=f30e55]:
+        - heading "5. ¿En qué casos pueden circular los conductores de motocicletas por las banquetas y áreas reservadas a los peatones?" [level=2] [ref=f30e56]
+        - list [ref=f30e57]:
+          - listitem [ref=f30e58]: "✓ Correcta: En ningún caso"
+          - listitem [ref=f30e59]: Cuando no haya peatones
+          - listitem [ref=f30e60]: Solo en emergencias
+          - listitem [ref=f30e61]: Cuando el tránsito esté detenido
+        - paragraph [ref=f30e62]: Las banquetas y áreas peatonales son de uso exclusivo para peatones. Ningún vehículo motorizado, incluidas las motocicletas, puede circular por ellas.
+      - listitem [ref=f30e63]:
+        - heading "6. Si el vehículo que conduce carece de direccionales o en su caso no funcionan y requiere cambiar de dirección, deberá:" [level=2] [ref=f30e64]
+        - list [ref=f30e65]:
+          - listitem [ref=f30e66]: "✓ Correcta: Hacer la señal respectiva con el brazo izquierdo extendido hacia arriba, si el cambio es a la derecha y extendiéndolo hacia abajo, si va a hacerlo hacia la izquierda"
+          - listitem [ref=f30e67]: Encender las luces intermitentes
+          - listitem [ref=f30e68]: Pitar el claxon para avisar a los demás
+          - listitem [ref=f30e69]: Reducir la velocidad y girar sin señalización
+        - paragraph [ref=f30e70]: "Las señales manuales son: brazo izquierdo extendido hacia arriba = vuelta a la derecha; brazo extendido hacia abajo = vuelta a la izquierda. Son obligatorias si las direccionales no funcionan."
+      - listitem [ref=f30e71]:
+        - heading "7. El conductor que se aproxime a un crucero de ferrocarril deberá hacer alto total a una distancia mínima de:" [level=2] [ref=f30e72]
+        - list [ref=f30e73]:
+          - listitem [ref=f30e74]: "✓ Correcta: 5 metros del riel más cercano del cruce del ferrocarril"
+          - listitem [ref=f30e75]: 2 metros del riel más cercano
+          - listitem [ref=f30e76]: 10 metros del riel más cercano
+          - listitem [ref=f30e77]: No es necesario detenerse si no viene el tren
+        - paragraph [ref=f30e78]: La distancia mínima de 5 metros permite al conductor tener visibilidad suficiente y espacio de reacción ante la aproximación de un tren.
+      - listitem [ref=f30e79]:
+        - heading "8. ¿En qué caso se permite efectuar carreras o arrancones en la vía pública?" [level=2] [ref=f30e80]
+        - list [ref=f30e81]:
+          - listitem [ref=f30e82]: "✓ Correcta: No están permitidos"
+          - listitem [ref=f30e83]: Cuando sea en horarios nocturnos
+          - listitem [ref=f30e84]: Cuando no haya tránsito
+          - listitem [ref=f30e85]: Con autorización verbal de un policía
+        - paragraph [ref=f30e86]: Las carreras o "arrancones" están totalmente prohibidos en la vía pública. Son una infracción grave que pone en peligro la vida de todos los usuarios.
+      - listitem [ref=f30e87]:
+        - heading "9. ¿Por dónde queda prohibido rebasar a otro vehículo?" [level=2] [ref=f30e88]
+        - list [ref=f30e89]:
+          - listitem [ref=f30e90]: "✓ Correcta: Por el acotamiento"
+          - listitem [ref=f30e91]: Por el carril de la izquierda
+          - listitem [ref=f30e92]: Por un carril de tránsito continuo
+          - listitem [ref=f30e93]: Por una carretera de doble sentido
+        - paragraph [ref=f30e94]: El acotamiento es un área de emergencia, no un carril de circulación. Rebasar por él es ilegal y extremadamente peligroso.
+      - listitem [ref=f30e95]:
+        - heading "10. Indique cuál es la condición para que los vehículos puedan realizar el ascenso y descenso de pasajeros" [level=2] [ref=f30e96]
+        - list [ref=f30e97]:
+          - listitem [ref=f30e98]: "✓ Correcta: Que el vehículo esté sin movimiento."
+          - listitem [ref=f30e99]: Que el vehículo use luces intermitentes
+          - listitem [ref=f30e100]: Que el vehículo se detenga solo parcialmente
+          - listitem [ref=f30e101]: Que el conductor lo indique con la mano
+        - paragraph [ref=f30e102]: Por seguridad, el vehículo debe estar completamente detenido para que los pasajeros suban o bajen. Hacerlo en movimiento causa accidentes graves.
+    - generic [ref=f30e103]:
+      - paragraph [ref=f30e104]: ¿Ya te lo sabes?
+      - paragraph [ref=f30e105]: Mídelo con 10 preguntas al azar en 5 minutos.
+      - link "Hacer el simulacro" [ref=f30e106] [cursor=pointer]:
+        - /url: /examen
+    - heading "Otros temas" [level=2] [ref=f30e107]
+    - list [ref=f30e108]:
+      - listitem [ref=f30e109]:
+        - link "Señales de Tránsito" [ref=f30e110] [cursor=pointer]:
+          - /url: /guia/senales-de-transito
+      - listitem [ref=f30e111]:
+        - link "Multas y Sanciones" [ref=f30e112] [cursor=pointer]:
+          - /url: /guia/multas-y-sanciones
+      - listitem [ref=f30e113]:
+        - link "Seguridad Vial" [ref=f30e114] [cursor=pointer]:
+          - /url: /guia/seguridad-vial
+      - listitem [ref=f30e115]:
+        - link "Vehículo y Documentos" [ref=f30e116] [cursor=pointer]:
+          - /url: /guia/vehiculo-y-documentos
+      - listitem [ref=f30e117]:
+        - link "Prioridades y Accidentes" [ref=f30e118] [cursor=pointer]:
+          - /url: /guia/prioridades-y-accidentes
+  - contentinfo [ref=f30e119]:
+    - generic [ref=f30e120]:
+      - generic [ref=f30e121]:
+        - paragraph [ref=f30e122]: Examen Vial EdoMex
+        - paragraph [ref=f30e123]: Práctica gratuita del examen teórico para la licencia de conducir del Estado de México. Sin registro y sin instalar nada.
+        - link "Descargar la app" [ref=f30e124] [cursor=pointer]:
+          - /url: https://play.google.com/store/apps/details?id=com.jovasoft.examenvialedomex
+      - navigation "Practicar" [ref=f30e127]:
+        - paragraph [ref=f30e128]: Practicar
+        - list [ref=f30e129]:
+          - listitem [ref=f30e130]:
+            - link "Simulacro de examen" [ref=f30e131] [cursor=pointer]:
+              - /url: /examen
+          - listitem [ref=f30e132]:
+            - link "Quiz de señales" [ref=f30e133] [cursor=pointer]:
+              - /url: /quiz-senales
+          - listitem [ref=f30e134]:
+            - link "Guía por temas" [ref=f30e135] [cursor=pointer]:
+              - /url: /guia
+      - navigation "Consultar" [ref=f30e136]:
+        - paragraph [ref=f30e137]: Consultar
+        - list [ref=f30e138]:
+          - listitem [ref=f30e139]:
+            - link "Catálogo de señales" [ref=f30e140] [cursor=pointer]:
+              - /url: /senales
+          - listitem [ref=f30e141]:
+            - link "Guía oficial en PDF" [ref=f30e142] [cursor=pointer]:
+              - /url: /guia-de-manejo-pdf
+          - listitem [ref=f30e143]:
+            - link "Privacidad" [ref=f30e144] [cursor=pointer]:
+              - /url: /privacidad
+    - paragraph [ref=f30e146]: Las preguntas provienen de la guía de estudio de la Secretaría de Movilidad del Estado de México. Las señales son del Manual de Señalización Vial y Dispositivos de Seguridad (SICT), en dominio público. Este sitio no es un portal oficial del Gobierno del Estado de México ni tramita licencias.© 2026 Jovanny Ramírez

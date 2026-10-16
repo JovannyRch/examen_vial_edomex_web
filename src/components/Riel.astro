@@ -1,0 +1,45 @@
+---
+import Icono from "./Icono.astro";
+
+interface Props {
+  /** Ordinal del paso; la secuencia es información aquí, no decoración. */
+  numero: number;
+  titulo: string;
+  /** El último paso corta el riel en vez de prolongarlo. */
+  ultimo?: boolean;
+}
+
+const { numero, titulo, ultimo = false } = Astro.props;
+---
+
+<section class="relative pt-10 pl-11 sm:pl-14">
+  {/* La línea del riel: nace bajo el número y llega al siguiente paso. */}
+  {
+    !ultimo && (
+      <span
+        class="absolute top-10 bottom-0 left-[1.1rem] w-0.5 bg-linde sm:left-[1.4rem]"
+        aria-hidden="true"
+      />
+    )
+  }
+
+  <span
+    class="absolute top-10 left-0 grid size-9 place-items-center rounded-full border-2 border-linde bg-lienzo sm:size-11"
+    aria-hidden="true"
+  >
+    {
+      ultimo ? (
+        <Icono nombre="palomita" tamano={18} class="text-verde-hondo dark:text-verde" />
+      ) : (
+        <span class="cifras text-sm font-black text-tinta-suave sm:text-base">{numero}</span>
+      )
+    }
+  </span>
+
+  <h2 class="text-2xl leading-tight font-black tracking-tight text-balance sm:text-3xl">
+    {titulo}
+  </h2>
+  <div class="mt-3">
+    <slot />
+  </div>
+</section>

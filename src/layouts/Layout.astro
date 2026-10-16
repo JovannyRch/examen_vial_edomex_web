@@ -1,0 +1,132 @@
+---
+import "../styles/global.css";
+import { SITE, ADSENSE_CLIENT } from "../config";
+import Encabezado from "../components/Encabezado.astro";
+import PieDePagina from "../components/PieDePagina.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  /** Ruta canónica sin dominio, p. ej. "/senales/alto". */
+  canonical?: string;
+  /** JSON-LD ya listo para serializar. */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /** Desactiva el ancho de lectura por defecto (portada y examen mandan el suyo). */
+  anchoLibre?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.pathname,
+  jsonLd,
+  anchoLibre = false,
+} = Astro.props;
+
+const canonicalURL = new URL(canonical, SITE.url).href;
+const tituloCompleto = title.includes(SITE.name) ? title : `${title} | ${SITE.name}`;
+const ogImage = new URL("/og.png", SITE.url).href;
+---
+
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{tituloCompleto}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content={SITE.author} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:locale" content={SITE.locale} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={tituloCompleto} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    {/* La fuente entra antes que cualquier otra cosa: es el único recurso que
+        bloquea la primera impresión de texto. */}
+    <link
+      rel="preload"
+      href="/fonts/nunito-latin-var.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    {/* Fija el tema antes del primer pintado para que nadie vea el destello
+        blanco al entrar de noche. */}
+    <script is:inline>
+      (() => {
+        try {
+          const guardado = localStorage.getItem("tema");
+          const oscuro = guardado
+            ? guardado === "oscuro"
+            : matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.classList.toggle("dark", oscuro);
+        } catch {
+          /* Modo privado o almacenamiento bloqueado: se queda en claro. */
+        }
+      })();
+    </script>
+
+    {
+      jsonLd && (
+        <script
+          is:inline
+          type="application/ld+json"
+          set:html={JSON.stringify(jsonLd)}
+        />
+      )
+    }
+
+    <script
+      is:inline
+      async
+      src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+      crossorigin="anonymous"></script>
+  </head>
+
+  <body class="min-h-dvh flex flex-col">
+    <!--
+      THESIS: Un simulador que empieza donde empieza el usuario — "tengo cita el
+      jueves" — y no en un catálogo de funciones. Refuse: el hero con rejilla de
+      tarjetas iguales que usa todo sitio de tests de manejo.
+      OWN-WORLD: verde #58CC02 y azul #1CB0F6 de la app; cada superficie pulsable
+      lleva labio inferior sólido de 4px en tono hondo que se hunde al pulsar;
+      Nunito 400–900; iconos de trazo 2 propios; las señales son SVG oficiales
+      del SICT sobre placa blanca.
+      STORY: esto responde mi examen real, lo practico ahora mismo gratis, y me
+      llevo la app para que recuerde en qué fallo.
+      FIRST VIEWPORT: titular a escala de cartel sobre el fondo claro, sin
+      imagen; debajo arranca el riel numerado del trámite y el paso ① ya contiene
+      el botón verde del simulacro.
+      FORM: ruta al módulo (línea de tiempo del trámite), 7.ª de mi lista
+      ordenada, repartida como líder por la tirada; seed bf498227.
+      FINISH: unreviewed and undocumented is unfinished; this build ends with the
+      finish review, the verdict, DESIGN.md, and every shipping raster carrying
+      its provenance.
+    -->
+    <a
+      href="#principal"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-xl focus:bg-verde focus:px-4 focus:py-2 focus:font-extrabold focus:text-white"
+    >
+      Saltar al contenido
+    </a>
+
+    <Encabezado />
+
+    <main id="principal" class={anchoLibre ? "flex-1" : "flex-1 mx-auto w-full max-w-3xl px-5 py-10"}>
+      <slot />
+    </main>
+
+    <PieDePagina />
+  </body>
+</html>

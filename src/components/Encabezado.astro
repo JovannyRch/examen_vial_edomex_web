@@ -1,0 +1,75 @@
+---
+import Icono from "./Icono.astro";
+import { SITE } from "../config";
+
+const ruta = Astro.url.pathname;
+/** Marca la sección activa: /guia/multas-y-sanciones activa "Guía". */
+const activo = (base: string) => ruta === base || ruta.startsWith(`${base}/`);
+
+const enlaces = [
+  { href: "/examen", texto: "Examen" },
+  { href: "/guia", texto: "Guía" },
+  { href: "/senales", texto: "Señales" },
+];
+---
+
+<header
+  class="sticky top-0 z-40 border-b-2 border-linde bg-fondo/92 backdrop-blur-sm"
+>
+  <div class="mx-auto flex h-16 max-w-5xl items-center gap-3 px-5">
+    <a
+      href="/"
+      class="flex items-center gap-2 font-extrabold tracking-tight text-tinta"
+      aria-label={`${SITE.name} — inicio`}
+    >
+      <span
+        class="grid size-9 place-items-center rounded-xl bg-verde text-white shadow-[0_3px_0_0_var(--color-verde-hondo)]"
+      >
+        <Icono nombre="senales" tamano={20} />
+      </span>
+      <span class="hidden text-[1.05rem] sm:inline">Examen Vial EdoMex</span>
+      <span class="text-[1.05rem] sm:hidden">EdoMex</span>
+    </a>
+
+    <nav class="ml-auto flex items-center gap-1" aria-label="Secciones">
+      {
+        enlaces.map((e) => (
+          <a
+            href={e.href}
+            aria-current={activo(e.href) ? "page" : undefined}
+            class:list={[
+              "rounded-lg px-3 py-2 text-sm font-bold transition-colors",
+              activo(e.href)
+                ? "bg-verde/12 text-verde-hondo dark:text-verde"
+                : "text-tinta-suave hover:bg-lienzo-hondo hover:text-tinta",
+            ]}
+          >
+            {e.texto}
+          </a>
+        ))
+      }
+
+      <button
+        type="button"
+        id="cambiar-tema"
+        class="ml-1 grid size-10 place-items-center rounded-lg text-tinta-suave transition-colors hover:bg-lienzo-hondo hover:text-tinta"
+        aria-label="Cambiar entre tema claro y oscuro"
+      >
+        <Icono nombre="sol" tamano={20} class="hidden dark:block" />
+        <Icono nombre="luna" tamano={20} class="block dark:hidden" />
+      </button>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const boton = document.getElementById("cambiar-tema");
+  boton?.addEventListener("click", () => {
+    const oscuro = document.documentElement.classList.toggle("dark");
+    try {
+      localStorage.setItem("tema", oscuro ? "oscuro" : "claro");
+    } catch {
+      /* Sin almacenamiento el cambio vale para esta visita y ya. */
+    }
+  });
+</script>

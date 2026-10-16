@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Icono from "../../components/Icono.astro";
+import { categories, questionsByCategory } from "../../data";
+
+const temas = categories.map((c) => ({ ...c, total: questionsByCategory(c.id).length }));
+---
+
+<Layout
+  title="Guía de estudio del examen de manejo EdoMex por temas"
+  description="Todas las preguntas de la guía oficial del Estado de México ordenadas por tema, con la respuesta correcta y la explicación de cada una."
+  canonical="/guia"
+>
+  <h1 class="text-4xl font-black tracking-tight text-balance">Guía de estudio por temas</h1>
+  <p class="mt-3 text-tinta-suave text-pretty">
+    Cada tema con sus preguntas, la respuesta correcta y por qué lo es. Léelo de
+    corrido y después mide cómo vas en el <a href="/examen" class="font-bold underline">simulacro</a>.
+  </p>
+
+  <ul class="mt-8 space-y-3">
+    {
+      temas.map((t) => (
+        <li>
+          <a
+            href={`/guia/${t.slug}`}
+            class="group ficha flex items-center gap-4 p-4 transition-transform hover:-translate-y-0.5"
+          >
+            <span class="grid size-11 shrink-0 place-items-center rounded-xl bg-azul/12 text-azul-hondo dark:text-azul">
+              <Icono nombre={t.id} tamano={22} />
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block font-extrabold tracking-tight">{t.label}</span>
+              <span class="block text-sm text-tinta-suave">{t.blurb}</span>
+            </span>
+            <span class="cifras shrink-0 text-sm font-bold text-tinta-suave">{t.total}</span>
+            <Icono nombre="flecha" tamano={18} class="shrink-0 text-tinta-tenue" />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

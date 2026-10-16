@@ -1,0 +1,105 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BloqueAnuncio from "../../components/BloqueAnuncio.astro";
+import { EXAM } from "../../config";
+import { categories, categoryBySlug, questionsByCategory, signBySlug } from "../../data";
+
+export function getStaticPaths() {
+  return categories.map((c) => ({ params: { slug: c.slug } }));
+}
+
+const { slug } = Astro.params;
+const tema = categoryBySlug(slug!)!;
+const preguntas = questionsByCategory(tema.id);
+const otros = categories.filter((c) => c.id !== tema.id);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: preguntas.map((q) => ({
+    "@type": "Question",
+    name: q.text,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: q.options[q.answer] + (q.explanation ? `. ${q.explanation}` : ""),
+    },
+  })),
+};
+---
+
+<Layout
+  title={`${tema.label}: preguntas del examen de manejo EdoMex`}
+  description={`${preguntas.length} preguntas de ${tema.label.toLowerCase()} de la guía oficial del Estado de México, con respuesta y explicación. ${tema.blurb}`}
+  canonical={`/guia/${tema.slug}`}
+  jsonLd={jsonLd}
+>
+  <nav aria-label="Ruta" class="text-sm font-bold text-tinta-suave">
+    <a href="/guia" class="underline">Guía</a> / {tema.label}
+  </nav>
+  <h1 class="mt-2 text-4xl font-black tracking-tight text-balance">{tema.label}</h1>
+  <p class="mt-3 text-tinta-suave text-pretty">{tema.blurb}</p>
+
+  <ol class="mt-8 space-y-4">
+    {
+      preguntas.map((q, i) => {
+        const s = q.sign ? signBySlug(q.sign) : undefined;
+        return (
+          <>
+            <li class="ficha p-5">
+              <h2 class="text-lg leading-snug font-extrabold text-pretty">
+                <span class="cifras text-tinta-tenue">{i + 1}. </span>
+                {q.text}
+              </h2>
+              {s?.image && (
+                <div class="placa mt-3 w-28 border-2 border-linde">
+                  <img src={s.image} alt="Señal de tránsito" width="96" height="96" loading="lazy" />
+                </div>
+              )}
+              <ul class="mt-3 space-y-1.5 text-sm">
+                {q.options.map((op, n) => (
+                  <li
+                    class={
+                      n === q.answer
+                        ? "rounded-lg border-2 border-verde-hondo bg-verde/15 px-3 py-2 font-bold"
+                        : "px-3 py-2 text-tinta-suave"
+                    }
+                  >
+                    {n === q.answer && <span class="font-black">✓ Correcta: </span>}
+                    {op}
+                  </li>
+                ))}
+              </ul>
+              {q.explanation && (
+                <p class="mt-3 text-sm text-tinta-suave text-pretty">{q.explanation}</p>
+              )}
+            </li>
+            {(i + 1) % 6 === 0 && i + 1 < preguntas.length && <BloqueAnuncio hueco="guia" />}
+          </>
+        );
+      })
+    }
+  </ol>
+
+  <div class="ficha mt-10 p-5 text-center">
+    <p class="font-extrabold">¿Ya te lo sabes?</p>
+    <p class="mt-1 text-sm text-tinta-suave">
+      Mídelo con {EXAM.questions} preguntas al azar en {EXAM.minutes} minutos.
+    </p>
+    <a href="/examen" class="boton boton-verde anillo-contraste mt-4 w-full max-w-sm">
+      Hacer el simulacro
+    </a>
+  </div>
+
+  <h2 class="mt-10 text-xl font-black tracking-tight">Otros temas</h2>
+  <ul class="mt-3 flex flex-wrap gap-2">
+    {
+      otros.map((c) => (
+        <li>
+          <a href={`/guia/${c.slug}`} class="boton boton-hueco min-h-11 px-4 py-2 text-sm">
+            {c.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

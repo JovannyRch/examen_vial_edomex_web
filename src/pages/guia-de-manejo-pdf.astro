@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { PLAY_STORE_URL } from "../config";
+
+const PDF = "https://jovannyrch.github.io/politicas/public/guia_manejo.pdf";
+---
+
+<Layout
+  title="Guía de manejo EdoMex en PDF: descarga la guía oficial"
+  description="Descarga la guía oficial de manejo del Estado de México en PDF y practica después con el simulacro gratuito del examen teórico."
+  canonical="/guia-de-manejo-pdf"
+>
+  <h1 class="text-4xl font-black tracking-tight text-balance">Guía de manejo EdoMex en PDF</h1>
+  <p class="mt-3 text-tinta-suave text-pretty">
+    La guía de estudio publicada por la Secretaría de Movilidad del Estado de
+    México, de la que sale el examen teórico.
+  </p>
+  <a href={PDF} target="_blank" rel="noopener" class="boton boton-verde anillo-contraste mt-6 w-full text-lg">
+    Abrir la guía en PDF
+  </a>
+
+  <div class="ficha mt-8 p-5">
+    <h2 class="text-xl font-black tracking-tight">¿Prefieres practicar que leer 100 páginas?</h2>
+    <p class="mt-2 text-tinta-suave text-pretty">
+      Aquí tienes las mismas preguntas ya ordenadas por tema, con su explicación.
+    </p>
+    <div class="mt-4 flex flex-col gap-2 sm:flex-row">
+      <a href="/guia" class="boton boton-hueco flex-1">Guía por temas</a>
+      <a href="/examen" class="boton boton-azul anillo-contraste flex-1">Hacer el simulacro</a>
+    </div>
+  </div>
+  <p class="mt-6 text-sm text-tinta-suave">
+    También en <a href={PLAY_STORE_URL} class="font-bold underline" target="_blank" rel="noopener">la app para Android</a>.
+  </p>
+</Layout>

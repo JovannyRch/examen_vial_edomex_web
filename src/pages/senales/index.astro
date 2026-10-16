@@ -1,0 +1,48 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { illustratedSigns, signTypes } from "../../data";
+
+const grupos = signTypes.map((t) => ({
+  ...t,
+  items: illustratedSigns.filter((s) => s.type === t.id),
+}));
+---
+
+<Layout
+  title="Señales de tránsito de México: catálogo oficial con significado"
+  description={`Catálogo de ${illustratedSigns.length} señales de tránsito preventivas, restrictivas e informativas con su significado, del Manual de Señalización Vial (SICT).`}
+  canonical="/senales"
+>
+  <h1 class="text-4xl font-black tracking-tight text-balance">Señales de tránsito</h1>
+  <p class="mt-3 text-tinta-suave text-pretty">
+    {illustratedSigns.length} señales oficiales del Manual de Señalización Vial.
+    Toca una para ver qué significa, o ponte a prueba en el
+    <a href="/quiz-senales" class="font-bold underline">quiz</a>.
+  </p>
+
+  {
+    grupos.map((g) => (
+      <section class="mt-10" aria-labelledby={`t-${g.id}`}>
+        <h2 id={`t-${g.id}`} class="text-2xl font-black tracking-tight">
+          {g.plural} <span class="cifras text-base text-tinta-tenue">{g.items.length}</span>
+        </h2>
+        <p class="mt-1 text-sm text-tinta-suave text-pretty">{g.blurb}</p>
+        <ul class="ficha mt-4 grid grid-cols-3 gap-px overflow-hidden bg-linde sm:grid-cols-5">
+          {g.items.map((s) => (
+            <li class="bg-lienzo">
+              <a
+                href={`/senales/${s.slug}`}
+                class="flex h-full flex-col items-center gap-1 p-3 text-center hover:bg-lienzo-hondo"
+              >
+                <span class="placa w-full">
+                  <img src={s.image} alt="" width="64" height="64" loading="lazy" />
+                </span>
+                <span class="text-xs leading-tight font-bold text-pretty">{s.name}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</Layout>

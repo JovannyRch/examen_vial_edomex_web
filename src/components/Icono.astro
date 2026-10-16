@@ -1,0 +1,75 @@
+---
+/**
+ * Set de iconos propio. Todos en rejilla de 24, trazo de 2, extremos y uniones
+ * redondeados, heredando `currentColor`: un solo grosor para toda la interfaz.
+ * La app usa emoji por categoría; aquí se dibujan porque un emoji cambia de
+ * forma en cada sistema y no es parte de ningún sistema de diseño.
+ */
+export type NombreIcono =
+  | "senales"
+  | "circulacion"
+  | "multas"
+  | "seguridad"
+  | "vehiculo"
+  | "prioridades"
+  | "reloj"
+  | "palomita"
+  | "tache"
+  | "flecha"
+  | "descarga"
+  | "sol"
+  | "luna"
+  | "menu"
+  | "play"
+  | "documento";
+
+interface Props {
+  nombre: NombreIcono;
+  /** Tamaño en px; el trazo se mantiene óptico al escalar. */
+  tamano?: number;
+  class?: string;
+}
+
+const { nombre, tamano = 24, class: clase = "" } = Astro.props;
+
+const trazos: Record<NombreIcono, string> = {
+  // Señal romboidal sobre poste.
+  senales: `<path d="M12 2.8 19.2 10 12 17.2 4.8 10Z"/><path d="M12 17.2V21.5"/><path d="M8.5 21.5h7"/>`,
+  // Frente de automóvil.
+  circulacion: `<path d="M4.5 16.5v2.2a.8.8 0 0 1-.8.8H2.8a.8.8 0 0 1-.8-.8v-2.2"/><path d="M22 16.5v2.2a.8.8 0 0 1-.8.8h-.9a.8.8 0 0 1-.8-.8v-2.2"/><path d="M2 16.5v-3.2a2 2 0 0 1 .13-.71l1.9-4.9A2 2 0 0 1 5.9 6.4h12.2a2 2 0 0 1 1.87 1.28l1.9 4.9A2 2 0 0 1 22 13.3v3.2Z"/><path d="M3.3 12.2h17.4"/><path d="M6 14.6h1.6"/><path d="M16.4 14.6H18"/>`,
+  // Mazo de juez sobre su base.
+  multas: `<path d="m13.6 6.3 4.1 4.1"/><path d="M15.65 4.25 9.5 10.4a1.2 1.2 0 0 0 0 1.7l1.9 1.9a1.2 1.2 0 0 0 1.7 0l6.15-6.15a1.2 1.2 0 0 0 0-1.7l-1.9-1.9a1.2 1.2 0 0 0-1.7 0Z"/><path d="m9.7 12.2-6 6a1.7 1.7 0 0 0 2.4 2.4l6-6"/><path d="M14 20.5h7.5"/>`,
+  // Escudo con cinturón cruzado.
+  seguridad: `<path d="M12 2.6 4.5 5.7v5.6c0 4.5 3.1 8.6 7.5 9.9 4.4-1.3 7.5-5.4 7.5-9.9V5.7Z"/><path d="M8.6 8.4 15 15.8"/><path d="M15.4 8.4 9 15.8"/>`,
+  // Credencial con fotografía y renglones.
+  vehiculo: `<rect x="2.5" y="4.6" width="19" height="14.8" rx="2.2"/><circle cx="8.2" cy="10.8" r="2"/><path d="M5 16.2c.5-1.5 1.8-2.3 3.2-2.3s2.7.8 3.2 2.3"/><path d="M14.6 9.6h4.2"/><path d="M14.6 13h4.2"/>`,
+  // Triángulo de precaución.
+  prioridades: `<path d="M10.3 3.7 1.9 18a2 2 0 0 0 1.7 3h16.8a2 2 0 0 0 1.7-3L13.7 3.7a2 2 0 0 0-3.4 0Z"/><path d="M12 9.5v4"/><path d="M12 17.2h.01"/>`,
+  reloj: `<circle cx="12" cy="12" r="9.2"/><path d="M12 6.8V12l3.4 2"/>`,
+  palomita: `<path d="m4.8 12.6 4.6 4.6L19.2 7.4"/>`,
+  tache: `<path d="M6.2 6.2 17.8 17.8"/><path d="M17.8 6.2 6.2 17.8"/>`,
+  flecha: `<path d="M4.5 12h15"/><path d="m13 5.5 6.5 6.5-6.5 6.5"/>`,
+  descarga: `<path d="M12 3.5v11.5"/><path d="m7.2 10.2 4.8 4.8 4.8-4.8"/><path d="M4.5 19.5h15"/>`,
+  sol: `<circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2"/><path d="M12 19.3v2.2"/><path d="m5.3 5.3 1.6 1.6"/><path d="m17.1 17.1 1.6 1.6"/><path d="M2.5 12h2.2"/><path d="M19.3 12h2.2"/><path d="m5.3 18.7 1.6-1.6"/><path d="m17.1 6.9 1.6-1.6"/>`,
+  luna: `<path d="M20.4 14.2A8.6 8.6 0 0 1 9.8 3.6a8.6 8.6 0 1 0 10.6 10.6Z"/>`,
+  menu: `<path d="M3.5 7h17"/><path d="M3.5 12h17"/><path d="M3.5 17h17"/>`,
+  // Triángulo de reproducción, el de la tienda.
+  play: `<path d="M6.5 3.9v16.2a.9.9 0 0 0 1.37.77l13.1-8.1a.9.9 0 0 0 0-1.54L7.87 3.13A.9.9 0 0 0 6.5 3.9Z"/>`,
+  documento: `<path d="M13.8 2.8H7a2 2 0 0 0-2 2v14.4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M13.6 2.9V8H19"/><path d="M8.8 13.2h6.4"/><path d="M8.8 16.6h4.2"/>`,
+};
+---
+
+<svg
+  width={tamano}
+  height={tamano}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class={clase}
+  aria-hidden="true"
+  focusable="false"
+  set:html={trazos[nombre]}
+/>

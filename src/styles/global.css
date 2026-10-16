@@ -1,0 +1,255 @@
+@import "tailwindcss";
+
+/* El tema lo fija una clase en <html>, puesta por un script inline antes de pintar. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Fuente ───────────────────────────────────────────────────────────────
+   Nunito variable, subconjunto latino, servida desde nuestro dominio. Un solo
+   archivo cubre de 400 a 900, así que el peso alto de los titulares no cuesta
+   una descarga extra. */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("/fonts/nunito-latin-var.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("/fonts/nunito-latin-ext-var.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@theme {
+  --font-sans: "Nunito", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Paleta de marca, idéntica a lib/theme/app_theme.dart de la app. */
+  --color-verde: #58cc02;
+  --color-verde-hondo: #46a302;
+  --color-azul: #1cb0f6;
+  --color-azul-hondo: #1899d6;
+  --color-naranja: #ff9600;
+  --color-naranja-hondo: #e58600;
+  --color-rojo: #ff4b4b;
+  --color-rojo-hondo: #e53535;
+  --color-morado: #ce82ff;
+  --color-morado-hondo: #a95fd4;
+
+  /* El labio inferior del botón y de la ficha: la firma de la app. */
+  --radius-ficha: 1rem;
+}
+
+/* Tokens semánticos: una capa indirecta para que el tema oscuro cambie un
+   valor y no cincuenta utilidades. */
+@theme inline {
+  --color-fondo: var(--fondo);
+  --color-lienzo: var(--lienzo);
+  --color-lienzo-hondo: var(--lienzo-hondo);
+  --color-linde: var(--linde);
+  --color-tinta: var(--tinta);
+  --color-tinta-suave: var(--tinta-suave);
+  --color-tinta-tenue: var(--tinta-tenue);
+}
+
+:root {
+  --fondo: #f7f7f7;
+  --lienzo: #ffffff;
+  --lienzo-hondo: #efefef;
+  --linde: #e0e0e0;
+  --tinta: #2f2f2f;
+  --tinta-suave: #616161;
+  --tinta-tenue: #9a9a9a;
+  color-scheme: light;
+}
+
+.dark {
+  --fondo: #1b1b2f;
+  --lienzo: #262640;
+  --lienzo-hondo: #1f1f36;
+  --linde: #3a3a52;
+  --tinta: #eaeaef;
+  --tinta-suave: #a8a8bd;
+  --tinta-tenue: #7a7a90;
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* El encabezado pegajoso no debe tapar el destino de un ancla. */
+    scroll-padding-top: 5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    background-color: var(--fondo);
+    color: var(--tinta);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Las superficies que no dibujamos también son del diseño. */
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-verde) 28%, transparent);
+    color: var(--tinta);
+  }
+
+  :where(input, textarea) {
+    caret-color: var(--color-verde-hondo);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-azul);
+    outline-offset: 2px;
+    border-radius: 0.35rem;
+  }
+
+  /* Un anillo azul sobre un botón azul desaparece: ahí cambia a tinta. */
+  .anillo-contraste:focus-visible {
+    outline-color: var(--tinta);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--linde) transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--linde);
+    border-radius: 99px;
+    border: 2px solid var(--fondo);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--tinta-tenue);
+  }
+
+  /* Cifras de la misma anchura en marcadores y cronómetros: si no, el número
+     salta de sitio cada vez que cambia. */
+  .cifras {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+
+  a {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 0.09em;
+  }
+}
+
+@layer components {
+  /* ── El botón de la app ─────────────────────────────────────────────────
+     Portado de lib/widgets/duo_button.dart: un labio inferior sólido de 4px en
+     un tono más hondo que desaparece al pulsar, y el botón baja a ocuparlo. No
+     es una sombra decorativa; es el único gesto de profundidad del sistema y
+     por eso vale en toda la interfaz. */
+  .boton {
+    --labio: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 3rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-ficha);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: #fff;
+    background-color: var(--tono);
+    box-shadow: 0 var(--labio) 0 0 var(--tono-hondo);
+    transform: translateY(0);
+    transition:
+      transform 90ms cubic-bezier(0.2, 0, 0, 1),
+      box-shadow 90ms cubic-bezier(0.2, 0, 0, 1),
+      filter 140ms ease-out;
+    cursor: pointer;
+  }
+  .boton:hover:not(:disabled) {
+    filter: brightness(1.06);
+  }
+  .boton:active:not(:disabled) {
+    transform: translateY(var(--labio));
+    box-shadow: 0 0 0 0 var(--tono-hondo);
+  }
+  .boton:disabled {
+    cursor: not-allowed;
+    filter: grayscale(0.7);
+    opacity: 0.55;
+  }
+
+  .boton-verde {
+    --tono: var(--color-verde);
+    --tono-hondo: var(--color-verde-hondo);
+  }
+  .boton-azul {
+    --tono: var(--color-azul);
+    --tono-hondo: var(--color-azul-hondo);
+  }
+  .boton-naranja {
+    --tono: var(--color-naranja);
+    --tono-hondo: var(--color-naranja-hondo);
+  }
+
+  /* Variante hueca: el labio es el borde inferior, más grueso que los lados. */
+  .boton-hueco {
+    --tono: transparent;
+    --tono-hondo: var(--linde);
+    color: var(--tinta);
+    background-color: var(--lienzo);
+    border: 2px solid var(--linde);
+  }
+  .boton-hueco:hover:not(:disabled) {
+    filter: none;
+    background-color: var(--lienzo-hondo);
+  }
+
+  /* ── La ficha ──────────────────────────────────────────────────────────
+     Mismo labio que el botón, en el tono del borde: une visualmente lo que se
+     lee con lo que se pulsa sin repetir el color de marca por toda la página. */
+  .ficha {
+    background-color: var(--lienzo);
+    border: 2px solid var(--linde);
+    border-radius: var(--radius-ficha);
+    box-shadow: 0 4px 0 0 var(--linde);
+  }
+
+  /* Placa de señal: el marco que enmarca cada SVG oficial. */
+  .placa {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    background-color: var(--lienzo);
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+  }
+  .placa img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

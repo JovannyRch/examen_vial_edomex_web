@@ -1,0 +1,34 @@
+---
+import { ADSENSE_CLIENT, AD_SLOTS } from "../config";
+
+interface Props {
+  /** Qué hueco de AD_SLOTS ocupar. */
+  hueco: keyof typeof AD_SLOTS;
+}
+
+const { hueco } = Astro.props;
+const slot = AD_SLOTS[hueco];
+---
+
+{
+  /* Sin ID de bloque no se pinta nada: un contenedor vacío reservando alto es
+     un hueco muerto en la página, y AdSense rechaza los bloques sin slot. */
+  slot && (
+    <aside class="my-10" aria-label="Publicidad">
+      <p class="mb-1.5 text-center text-[0.65rem] font-bold tracking-widest text-tinta-tenue uppercase">
+        Publicidad
+      </p>
+      <ins
+        class="adsbygoogle block"
+        style="display:block"
+        data-ad-client={ADSENSE_CLIENT}
+        data-ad-slot={slot}
+        data-ad-format="fluid"
+        data-ad-layout="in-article"
+      />
+      <script is:inline>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </aside>
+  )
+}

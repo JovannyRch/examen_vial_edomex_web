@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="714mm"
+   height="714mm"
+   viewBox="0 0 714 714"
+   version="1.1"
+   id="svg60691"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="Mexico road sign SIS-11 (2023).svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview60693"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.76257015"
+     inkscape:cx="1333.6478"
+     inkscape:cy="1178.2523"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs60688" />
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(247.70616,253.95146)">
+    <g
+       id="g7688"
+       transform="translate(-12777.568,-12841.806)">
+      <g
+         id="g489-1-9-0-8-0-4-1-1"
+         transform="translate(10162.355,8632.127)">
+        <rect
+           style="fill:#000000;stroke-width:3.70491;stroke-opacity:0.578462;paint-order:fill markers stroke"
+           id="rect20798-0-7-9-3-3-6-2-8-3-9-2-4"
+           width="714"
+           height="714"
+           x="-4669.7275"
+           y="2367.5068"
+           ry="42"
+           rx="42"
+           transform="rotate(-90)" />
+        <rect
+           style="fill:#ffffff;stroke-width:3.68415;stroke-opacity:0.578462;paint-order:fill markers stroke"
+           id="rect20798-0-7-9-5-8-9-1-0-1-5-35"
+           width="710"
+           height="710"
+           x="-4667.7271"
+           y="2369.5068"
+           ry="40"
+           rx="40"
+           transform="rotate(-90)" />
+        <rect
+           style="fill:#32479d;stroke-width:3.47659;stroke-opacity:0.578462;paint-order:fill markers stroke"
+           id="rect20798-4-7-0-6-3-4-1-2-1-9-3-89"
+           width="670"
+           height="670"
+           x="-4647.7275"
+           y="2389.5063"
+           ry="20"
+           rx="20"
+           transform="rotate(-90)" />
+      </g>
+      <path
+         id="rect4952"
+         style="fill:#ffffff;stroke-width:30.8354;paint-order:fill markers stroke"
+         d="m 13029.559,12746.455 v 21.809 h 34.734 c 6.172,0 8.167,4.35 8.167,8.168 v 3.75 h -23.728 v 69.344 l 23.728,14.034 v 298.436 l 0.173,0.685 c 0,0 0.653,7.106 -1.11,13.253 -0.89,3.074 -2.249,5.506 -3.94,7.022 -1.693,1.512 -3.794,2.724 -8.888,2.724 -5.094,0 -7.195,-1.211 -8.886,-2.724 -1.693,-1.511 -3.055,-3.948 -3.942,-7.022 -1.773,-6.147 -1.102,-13.253 -1.102,-13.253 l 0.165,-0.685 v -250.381 c 0,-10.576 -3.473,-20.476 -10.527,-27.26 -7.054,-6.785 -16.877,-9.841 -27.33,-9.841 h -16.533 -5.077 -247.491 c -12.018,0 -21.697,9.679 -21.697,21.697 v 321.999 c 0,12.017 9.679,21.687 21.697,21.687 h 252.568 c 12.018,0 21.689,-9.67 21.689,-21.687 v -321.418 c 3.3,0.627 5.523,1.842 7.047,3.307 2.21,2.126 3.809,5.336 3.809,11.516 v 249.721 l 0.166,-1.37 c 0,0 -1.547,10.557 1.77,22.043 1.663,5.744 4.684,12.124 10.371,17.22 5.685,5.097 13.957,8.296 23.451,8.296 9.492,0 17.765,-3.199 23.45,-8.296 5.687,-5.096 8.715,-11.476 10.371,-17.22 3.316,-11.486 1.772,-22.043 1.772,-22.043 l 0.165,1.37 v -384.904 c 0,-14.802 -12.049,-29.977 -30.013,-29.977 z" />
+      <path
+         id="rect4952-2"
+         style="fill:#ffffff;stroke-width:34.0546;paint-order:fill markers stroke"
+         d="m 12716.7,12648.443 c -18.271,0 -32.98,14.709 -32.98,32.98 v 182.693 h 361.045 v -182.693 c 0,-18.271 -14.709,-32.98 -32.98,-32.98 z" />
+      <path
+         id="rect5966"
+         style="fill:#32479d;stroke-width:36.6727;paint-order:fill markers stroke"
+         d="m 12740.94,12680.113 c -11.038,0 -19.919,8.881 -19.919,19.917 v 128.493 h 286.403 v -128.493 c 0,-11.036 -8.89,-19.917 -19.926,-19.917 z" />
+    </g>
+  </g>
+</svg>

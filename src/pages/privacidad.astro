@@ -1,0 +1,34 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { SITE } from "../config";
+---
+
+<Layout
+  title="Política de privacidad"
+  description="Cómo trata Examen Vial EdoMex los datos de quien visita el sitio: sin cuentas, sin registro, con analítica agregada y publicidad de Google AdSense."
+  canonical="/privacidad"
+>
+  <h1 class="text-4xl font-black tracking-tight text-balance">Política de privacidad</h1>
+  <div class="mt-6 space-y-4 text-tinta-suave text-pretty">
+    <p>
+      {SITE.name} no tiene cuentas ni formularios: no pedimos ni guardamos tu nombre,
+      correo ni respuestas. Los resultados de tus simulacros viven solo en tu navegador
+      mientras la página está abierta.
+    </p>
+    <p>
+      Guardamos en tu dispositivo únicamente tu preferencia de tema claro u oscuro.
+    </p>
+    <p>
+      Usamos Vercel Web Analytics para medir visitas de forma agregada y sin cookies.
+    </p>
+    <p>
+      Mostramos anuncios de Google AdSense. Google y sus socios pueden usar cookies
+      para personalizarlos; puedes gestionarlo en
+      <a class="font-bold underline" href="https://adssettings.google.com" rel="noopener">adssettings.google.com</a>.
+    </p>
+    <p>
+      Este sitio no es un portal oficial del Gobierno del Estado de México ni tramita
+      licencias. Para dudas escribe a {SITE.author}.
+    </p>
+  </div>
+</Layout>

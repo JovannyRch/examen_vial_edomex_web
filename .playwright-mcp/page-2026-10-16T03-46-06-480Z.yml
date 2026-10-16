@@ -1,0 +1,103 @@
+- generic [active] [ref=f24e1]:
+  - link "Saltar al contenido" [ref=f24e2] [cursor=pointer]:
+    - /url: "#principal"
+  - banner [ref=f24e3]:
+    - generic [ref=f24e4]:
+      - link "Examen Vial EdoMex — inicio" [ref=f24e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f24e9]: EdoMex
+      - navigation "Secciones" [ref=f24e10]:
+        - link "Examen" [ref=f24e11] [cursor=pointer]:
+          - /url: /examen
+        - link "Guía" [ref=f24e12] [cursor=pointer]:
+          - /url: /guia
+        - link "Señales" [ref=f24e13] [cursor=pointer]:
+          - /url: /senales
+        - button "Cambiar entre tema claro y oscuro" [ref=f24e14]
+  - main [ref=f24e17]:
+    - navigation "Ruta" [ref=f24e18]:
+      - link "Señales" [ref=f24e19] [cursor=pointer]:
+        - /url: /senales
+      - text: / Preventivas
+    - heading "Curva" [level=1] [ref=f24e20]
+    - generic [ref=f24e21]:
+      - 'img "Señal de tránsito: Curva" [ref=f24e23]'
+      - generic [ref=f24e24]:
+        - generic [ref=f24e25]:
+          - term [ref=f24e26]: Tipo
+          - definition [ref=f24e27]: Preventiva
+        - generic [ref=f24e28]:
+          - term [ref=f24e29]: Código
+          - definition [ref=f24e30]: SP-6
+        - generic [ref=f24e31]:
+          - term [ref=f24e32]: Significado
+          - definition [ref=f24e33]: Se utiliza para indicar curvas a la derecha o izquierda que sean de menos de 90 grados.
+    - paragraph [ref=f24e34]: Rombo amarillo con símbolo negro. Advierten de un peligro o una condición del camino más adelante.
+    - heading "Más señales preventivas" [level=2] [ref=f24e35]
+    - list [ref=f24e36]:
+      - listitem [ref=f24e37]:
+        - link [ref=f24e38] [cursor=pointer]:
+          - /url: /senales/curva-cerrada
+          - img "Curva cerrada" [ref=f24e39]
+      - listitem [ref=f24e40]:
+        - link [ref=f24e41] [cursor=pointer]:
+          - /url: /senales/camino-sinuoso
+          - img "Camino sinuoso" [ref=f24e42]
+      - listitem [ref=f24e43]:
+        - link [ref=f24e44] [cursor=pointer]:
+          - /url: /senales/curva-sinuosa
+          - img "Curva sinuosa" [ref=f24e45]
+      - listitem [ref=f24e46]:
+        - link [ref=f24e47] [cursor=pointer]:
+          - /url: /senales/contracurva
+          - img "Contracurva" [ref=f24e48]
+      - listitem [ref=f24e49]:
+        - link [ref=f24e50] [cursor=pointer]:
+          - /url: /senales/cruce
+          - img "Cruce" [ref=f24e51]
+      - listitem [ref=f24e52]:
+        - link [ref=f24e53] [cursor=pointer]:
+          - /url: /senales/entronque
+          - img "Entronque" [ref=f24e54]
+      - listitem [ref=f24e55]:
+        - link [ref=f24e56] [cursor=pointer]:
+          - /url: /senales/bifurcacion
+          - img "Bifurcación" [ref=f24e57]
+      - listitem [ref=f24e58]:
+        - link [ref=f24e59] [cursor=pointer]:
+          - /url: /senales/entronque-delta
+          - img "Entronque delta" [ref=f24e60]
+    - link "Ponte a prueba en el quiz" [ref=f24e61] [cursor=pointer]:
+      - /url: /quiz-senales
+  - contentinfo [ref=f24e62]:
+    - generic [ref=f24e63]:
+      - generic [ref=f24e64]:
+        - paragraph [ref=f24e65]: Examen Vial EdoMex
+        - paragraph [ref=f24e66]: Práctica gratuita del examen teórico para la licencia de conducir del Estado de México. Sin registro y sin instalar nada.
+        - link "Descargar la app" [ref=f24e67] [cursor=pointer]:
+          - /url: https://play.google.com/store/apps/details?id=com.jovasoft.examenvialedomex
+      - navigation "Practicar" [ref=f24e70]:
+        - paragraph [ref=f24e71]: Practicar
+        - list [ref=f24e72]:
+          - listitem [ref=f24e73]:
+            - link "Simulacro de examen" [ref=f24e74] [cursor=pointer]:
+              - /url: /examen
+          - listitem [ref=f24e75]:
+            - link "Quiz de señales" [ref=f24e76] [cursor=pointer]:
+              - /url: /quiz-senales
+          - listitem [ref=f24e77]:
+            - link "Guía por temas" [ref=f24e78] [cursor=pointer]:
+              - /url: /guia
+      - navigation "Consultar" [ref=f24e79]:
+        - paragraph [ref=f24e80]: Consultar
+        - list [ref=f24e81]:
+          - listitem [ref=f24e82]:
+            - link "Catálogo de señales" [ref=f24e83] [cursor=pointer]:
+              - /url: /senales
+          - listitem [ref=f24e84]:
+            - link "Guía oficial en PDF" [ref=f24e85] [cursor=pointer]:
+              - /url: /guia-de-manejo-pdf
+          - listitem [ref=f24e86]:
+            - link "Privacidad" [ref=f24e87] [cursor=pointer]:
+              - /url: /privacidad
+    - paragraph [ref=f24e89]: Las preguntas provienen de la guía de estudio de la Secretaría de Movilidad del Estado de México. Las señales son del Manual de Señalización Vial y Dispositivos de Seguridad (SICT), en dominio público. Este sitio no es un portal oficial del Gobierno del Estado de México ni tramita licencias.© 2026 Jovanny Ramírez

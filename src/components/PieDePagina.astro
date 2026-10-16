@@ -1,0 +1,60 @@
+---
+import Icono from "./Icono.astro";
+import { PLAY_STORE_URL, SITE } from "../config";
+
+const anio = new Date().getFullYear();
+---
+
+<footer class="mt-16 border-t-2 border-linde bg-lienzo">
+  <div class="mx-auto grid max-w-5xl gap-8 px-5 py-12 sm:grid-cols-[1.4fr_1fr_1fr]">
+    <div>
+      <p class="text-lg font-extrabold tracking-tight">{SITE.name}</p>
+      <p class="mt-2 max-w-sm text-sm leading-relaxed text-tinta-suave">
+        Práctica gratuita del examen teórico para la licencia de conducir del
+        Estado de México. Sin registro y sin instalar nada.
+      </p>
+      <a
+        href={PLAY_STORE_URL}
+        target="_blank"
+        rel="noopener"
+        class="boton boton-verde anillo-contraste mt-5 w-full text-[0.95rem] sm:w-auto"
+      >
+        <Icono nombre="play" tamano={18} />
+        Descargar la app
+      </a>
+    </div>
+
+    <nav aria-label="Practicar">
+      <p class="text-xs font-extrabold tracking-widest text-tinta-tenue uppercase">
+        Practicar
+      </p>
+      <ul class="mt-3 space-y-2 text-sm font-semibold">
+        <li><a class="hover:text-verde-hondo dark:hover:text-verde" href="/examen">Simulacro de examen</a></li>
+        <li><a class="hover:text-verde-hondo dark:hover:text-verde" href="/quiz-senales">Quiz de señales</a></li>
+        <li><a class="hover:text-verde-hondo dark:hover:text-verde" href="/guia">Guía por temas</a></li>
+      </ul>
+    </nav>
+
+    <nav aria-label="Consultar">
+      <p class="text-xs font-extrabold tracking-widest text-tinta-tenue uppercase">
+        Consultar
+      </p>
+      <ul class="mt-3 space-y-2 text-sm font-semibold">
+        <li><a class="hover:text-verde-hondo dark:hover:text-verde" href="/senales">Catálogo de señales</a></li>
+        <li><a class="hover:text-verde-hondo dark:hover:text-verde" href="/guia-de-manejo-pdf">Guía oficial en PDF</a></li>
+        <li><a class="hover:text-verde-hondo dark:hover:text-verde" href="/privacidad">Privacidad</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="border-t border-linde">
+    <p class="mx-auto max-w-5xl px-5 py-6 text-xs leading-relaxed text-tinta-tenue">
+      Las preguntas provienen de la guía de estudio de la Secretaría de Movilidad
+      del Estado de México. Las señales son del Manual de Señalización Vial y
+      Dispositivos de Seguridad (SICT), en dominio público. Este sitio no es un
+      portal oficial del Gobierno del Estado de México ni tramita licencias.
+      <br />
+      © {anio} {SITE.author}
+    </p>
+  </div>
+</footer>

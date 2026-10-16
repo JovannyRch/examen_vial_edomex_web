@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Simulador from "../components/Simulador";
+import { EXAM, PLAY_STORE_URL } from "../config";
+import { signBySlug, signQuizQuestions } from "../data";
+
+const banco = signQuizQuestions.map((q) => {
+  const s = q.sign ? signBySlug(q.sign) : undefined;
+  return {
+    id: q.id,
+    text: q.text,
+    options: q.options,
+    answer: q.answer,
+    explanation: q.explanation,
+    image: s?.image ?? undefined,
+  };
+});
+---
+
+<Layout
+  title="Quiz de señales de tránsito — practica gratis"
+  description="Adivina 10 señales de tránsito oficiales del Manual de Señalización Vial y aprende qué significa cada una."
+  canonical="/quiz-senales"
+>
+  <Simulador
+    client:load
+    banco={banco}
+    total={EXAM.questions}
+    aprobar={EXAM.passing}
+    minutos={0}
+    titulo="Quiz de señales"
+    playStoreUrl={PLAY_STORE_URL}
+    otraRuta={{ href: "/examen", label: "Simulacro del examen" }}
+  />
+</Layout>

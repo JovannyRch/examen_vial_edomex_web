@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="714mm"
+   height="714mm"
+   viewBox="0 0 714 714"
+   version="1.1"
+   id="svg19837"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="Mexico road sign SIS-05 (2023).svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview19839"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.76257015"
+     inkscape:cx="1487.0763"
+     inkscape:cy="959.25602"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs19834" />
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(288.3014,311.89486)">
+    <g
+       id="g10927"
+       transform="translate(78.59606,-9599.7976)">
+      <g
+         id="g489-1-9-1-9-9"
+         transform="translate(-2734.4043,5332.1752)">
+        <rect
+           style="fill:#000000;stroke-width:3.70491;stroke-opacity:0.578462;paint-order:fill markers stroke"
+           id="rect20798-0-7-9-3-3-6-7-7-1"
+           width="714"
+           height="714"
+           x="-4669.7275"
+           y="2367.5068"
+           ry="42"
+           rx="42"
+           transform="rotate(-90)" />
+        <rect
+           style="fill:#ffffff;stroke-width:3.68415;stroke-opacity:0.578462;paint-order:fill markers stroke"
+           id="rect20798-0-7-9-5-8-48-4-5"
+           width="710"
+           height="710"
+           x="-4667.7271"
+           y="2369.5068"
+           ry="40"
+           rx="40"
+           transform="rotate(-90)" />
+        <rect
+           style="fill:#32479d;stroke-width:3.47659;stroke-opacity:0.578462;paint-order:fill markers stroke"
+           id="rect20798-4-7-0-6-3-4-50-6-0"
+           width="670"
+           height="670"
+           x="-4647.7275"
+           y="2389.5063"
+           ry="20"
+           rx="20"
+           transform="rotate(-90)" />
+      </g>
+      <path
+         id="path12230"
+         style="fill:#ffffff;stroke-width:50.3846;stroke-opacity:0.683077;paint-order:fill markers stroke"
+         d="m -48.108337,9352.1946 -34.196,19.9271 49.4793,86.6329 -245.018403,427.1099 h -25.0479 v 41.2179 h 585.97245 v -41.2179 h -25.0478 l -245.015147,-427.1099 49.47765,-86.6329 -34.1943,-19.9271 -38.2049503,66.6034 z m 38.2132997,176.6785 v 356.9914 H -214.04154 Z" />
+    </g>
+  </g>
+</svg>

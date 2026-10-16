@@ -1,0 +1,71 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BloqueAnuncio from "../../components/BloqueAnuncio.astro";
+import { illustratedSigns, signTypes } from "../../data";
+
+export function getStaticPaths() {
+  return illustratedSigns.map((s) => ({ params: { slug: s.slug } }));
+}
+
+const { slug } = Astro.params;
+const senal = illustratedSigns.find((s) => s.slug === slug)!;
+const tipo = signTypes.find((t) => t.id === senal.type)!;
+const relacionadas = illustratedSigns
+  .filter((s) => s.type === senal.type && s.slug !== senal.slug)
+  .slice(0, 8);
+---
+
+<Layout
+  title={`Señal ${senal.name}: qué significa`}
+  description={`${senal.name} (${tipo.label.toLowerCase()}${senal.code ? `, ${senal.code}` : ""}). ${senal.description}`}
+  canonical={`/senales/${senal.slug}`}
+>
+  <nav aria-label="Ruta" class="text-sm font-bold text-tinta-suave">
+    <a href="/senales" class="underline">Señales</a> / {tipo.plural}
+  </nav>
+  <h1 class="mt-2 text-4xl font-black tracking-tight text-balance">{senal.name}</h1>
+
+  <div class="ficha mt-6 flex flex-col items-center gap-5 p-6 sm:flex-row">
+    <div class="placa w-44 shrink-0 border-2 border-linde">
+      <img src={senal.image} alt={`Señal de tránsito: ${senal.name}`} width="160" height="160" />
+    </div>
+    <dl class="w-full space-y-2">
+      <div>
+        <dt class="text-xs font-extrabold tracking-widest text-tinta-suave uppercase">Tipo</dt>
+        <dd class="font-bold">{tipo.label}</dd>
+      </div>
+      {
+        senal.code && (
+          <div>
+            <dt class="text-xs font-extrabold tracking-widest text-tinta-suave uppercase">Código</dt>
+            <dd class="font-bold">{senal.code}</dd>
+          </div>
+        )
+      }
+      <div>
+        <dt class="text-xs font-extrabold tracking-widest text-tinta-suave uppercase">Significado</dt>
+        <dd class="text-pretty">{senal.description}</dd>
+      </div>
+    </dl>
+  </div>
+  <p class="mt-3 text-sm text-tinta-suave text-pretty">{tipo.blurb}</p>
+
+  <BloqueAnuncio hueco="senal" />
+
+  <h2 class="mt-8 text-xl font-black tracking-tight">Más señales {tipo.plural.toLowerCase()}</h2>
+  <ul class="ficha mt-3 grid grid-cols-4 gap-px overflow-hidden bg-linde sm:grid-cols-8">
+    {
+      relacionadas.map((s) => (
+        <li class="bg-lienzo">
+          <a href={`/senales/${s.slug}`} class="placa hover:bg-lienzo-hondo" title={s.name}>
+            <img src={s.image} alt={s.name} width="48" height="48" loading="lazy" />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <a href="/quiz-senales" class="boton boton-azul anillo-contraste mt-8 w-full">
+    Ponte a prueba en el quiz
+  </a>
+</Layout>

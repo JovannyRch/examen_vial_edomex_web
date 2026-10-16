@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="714mm"
+   height="714mm"
+   viewBox="0 0 714 714"
+   version="1.1"
+   id="svg57915"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="Mexico road sign SIS-10 (2023).svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview57917"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.76257015"
+     inkscape:cx="1294.3072"
+     inkscape:cy="1107.4391"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs57912" />
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(237.29816,272.68776)">
+    <g
+       id="g7702"
+       transform="translate(-12625.572,-11598.612)">
+      <g
+         id="g489-1-9-0-8-0-4-1"
+         transform="translate(10020.767,7370.1967)">
+        <rect
+           style="fill:#000000;stroke-width:3.70491;stroke-opacity:0.578462;paint-order:fill markers stroke"
+           id="rect20798-0-7-9-3-3-6-2-8-3-9-2"
+           width="714"
+           height="714"
+           x="-4669.7275"
+           y="2367.5068"
+           ry="42"
+           rx="42"
+           transform="rotate(-90)" />
+        <rect
+           style="fill:#ffffff;stroke-width:3.68415;stroke-opacity:0.578462;paint-order:fill markers stroke"
+           id="rect20798-0-7-9-5-8-9-1-0-1-5"
+           width="710"
+           height="710"
+           x="-4667.7271"
+           y="2369.5068"
+           ry="40"
+           rx="40"
+           transform="rotate(-90)" />
+        <rect
+           style="fill:#32479d;stroke-width:3.47659;stroke-opacity:0.578462;paint-order:fill markers stroke"
+           id="rect20798-4-7-0-6-3-4-1-2-1-9-3"
+           width="670"
+           height="670"
+           x="-4647.7275"
+           y="2389.5063"
+           ry="20"
+           rx="20"
+           transform="rotate(-90)" />
+      </g>
+      <g
+         id="g6104"
+         transform="translate(1249.8127,162.8304)">
+        <path
+           id="rect9917"
+           style="fill:#ffffff;stroke-width:18.7946;stroke-opacity:0.904615;paint-order:fill markers stroke"
+           d="m 11449.786,11228.115 -31.983,42.625 h -39.081 c -35.582,0 -64.226,28.644 -64.226,64.225 v 216.12 c 0,25.865 32.047,61.862 60.425,77.444 31.685,17.438 66.602,40.531 120.543,40.531 53.94,0 88.854,-23.093 120.537,-40.531 28.377,-15.582 60.425,-51.579 60.425,-77.444 v -216.12 c 0,-35.581 -28.646,-64.225 -64.227,-64.225 h -39.074 l -31.98,-42.625 z"
+           sodipodi:nodetypes="ccsssssssssccc" />
+        <path
+           id="rect5804-33"
+           style="fill:#ffffff;stroke-width:19.516;paint-order:fill markers stroke"
+           d="m 11364.428,11667.542 v 152.198 h 36.209 v -34.211 h 189.651 v 34.211 h 36.21 v -152.198 h -36.21 v 32.835 h -189.651 v -32.835 z m 36.209,61.991 h 189.651 v 26.838 h -189.651 z"
+           sodipodi:nodetypes="cccccccccccccccccc" />
+        <circle
+           style="fill:#32479d;stroke-width:23.7101;stroke-opacity:0.904615;paint-order:fill markers stroke"
+           id="path10750"
+           cx="11398.484"
+           cy="11545.208"
+           r="30.160019" />
+        <path
+           id="rect10752"
+           style="fill:#32479d;stroke-width:21.6329;stroke-opacity:0.904615;paint-order:fill markers stroke"
+           d="m 11390.873,11336.693 c -12.261,0 -22.131,9.871 -22.131,22.131 v 110.224 h 253.438 v -110.224 c 0,-12.26 -9.864,-22.131 -22.122,-22.131 z"
+           sodipodi:nodetypes="csccscc" />
+        <path
+           id="rect10757"
+           style="fill:#32479d;stroke-width:22.3335;stroke-opacity:0.904615;paint-order:fill markers stroke"
+           d="m 11456.418,11256.419 v 29.942 c 26.029,0 52.056,0 78.084,0 v -29.942 c -26.028,0 -52.055,0 -78.084,0 z"
+           sodipodi:nodetypes="ccccc" />
+        <ellipse
+           style="fill:#32479d;stroke-width:23.7098;stroke-opacity:0.904615;paint-order:fill markers stroke"
+           id="path10750-7"
+           cx="-11592.462"
+           cy="11545.208"
+           transform="scale(-1,1)"
+           rx="30.158985"
+           ry="30.160019" />
+        <circle
+           style="fill:#ffffff;stroke-width:26.6343;stroke-opacity:0.904615;paint-order:fill markers stroke"
+           id="path12264"
+           cx="11495.481"
+           cy="11271.373"
+           r="14.97289" />
+      </g>
+    </g>
+  </g>
+</svg>

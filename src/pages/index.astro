@@ -1,0 +1,250 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icono from "../components/Icono.astro";
+import BloqueAnuncio from "../components/BloqueAnuncio.astro";
+import Riel from "../components/Riel.astro";
+import { EXAM, PLAY_STORE_URL, SITE } from "../config";
+import {
+  categories,
+  examQuestions,
+  illustratedSigns,
+  questionsByCategory,
+  signQuizQuestions,
+} from "../data";
+
+/** Temas ordenados por cuántas preguntas trae cada uno: el más pesado primero. */
+const temas = categories
+  .map((c) => ({ ...c, total: questionsByCategory(c.id).length }))
+  .sort((a, b) => b.total - a.total);
+
+const maxTema = temas[0].total;
+const totalPreguntas = examQuestions.length + signQuizQuestions.length;
+
+/** Muestra del catálogo para el muro: una tira de los tres tipos. */
+const muestra = [
+  ...illustratedSigns.filter((s) => s.type === "preventiva").slice(0, 6),
+  ...illustratedSigns.filter((s) => s.type === "restrictiva").slice(0, 6),
+  ...illustratedSigns.filter((s) => s.type === "informativa").slice(0, 6),
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE.name,
+    url: SITE.url,
+    inLanguage: "es-MX",
+    description: SITE.description,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "¿Cuántas preguntas tiene el examen de manejo del Estado de México?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `El examen teórico consta de ${EXAM.questions} preguntas y se aprueba con ${EXAM.passing} aciertos.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Cuánto tiempo dan para contestar el examen?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Se dispone de ${EXAM.minutes} minutos para responder las ${EXAM.questions} preguntas.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿De dónde salen las preguntas de este simulador?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "De la guía de estudio publicada por la Secretaría de Movilidad del Estado de México, con la que se elabora el examen teórico.",
+        },
+      },
+    ],
+  },
+];
+---
+
+<Layout
+  title={`Examen de manejo EdoMex ${new Date().getFullYear()} — simulador gratis`}
+  description={SITE.description}
+  canonical="/"
+  jsonLd={jsonLd}
+  anchoLibre
+>
+  {/* ── Primer viewport: el titular, a escala de cartel ───────────────── */}
+  <section class="mx-auto w-full max-w-3xl px-5 pt-14 pb-4 sm:pt-20">
+    <h1
+      class="text-[2.6rem] leading-[0.95] font-black tracking-[-0.04em] text-balance sm:text-6xl"
+    >
+      Tienes cita en el módulo.<br />
+      <span class="text-verde-hondo dark:text-verde">
+        Esto es lo que te van a preguntar.
+      </span>
+    </h1>
+    <p class="mt-6 max-w-xl text-lg leading-relaxed text-tinta-suave text-pretty">
+      Las <strong class="font-extrabold text-tinta">{totalPreguntas} preguntas</strong>
+      de la guía oficial del Estado de México, ordenadas por el camino que te queda
+      hasta el examen. Gratis, sin registro y sin instalar nada.
+    </p>
+  </section>
+
+  <div class="mx-auto w-full max-w-3xl px-5 pb-16">
+    <Riel numero={1} titulo="Primero, mide dónde estás">
+      <p class="text-tinta-suave leading-relaxed">
+        El examen real son <strong class="font-extrabold text-tinta"
+          >{EXAM.questions} preguntas</strong
+        > en <strong class="font-extrabold text-tinta">{EXAM.minutes} minutos</strong>,
+        y se aprueba con <strong class="font-extrabold text-tinta"
+          >{EXAM.passing} aciertos</strong
+        >. El simulacro usa esas mismas reglas, con preguntas tomadas al azar y las
+        respuestas revueltas.
+      </p>
+
+      <div class="ficha mt-5 p-5">
+        <div class="flex items-stretch divide-x-2 divide-linde text-center">
+          <div class="flex-1 px-2">
+            <p class="cifras text-3xl font-black tracking-tight">{EXAM.questions}</p>
+            <p class="mt-0.5 text-xs font-bold text-tinta-suave">preguntas</p>
+          </div>
+          <div class="flex-1 px-2">
+            <p class="cifras text-3xl font-black tracking-tight">{EXAM.minutes}:00</p>
+            <p class="mt-0.5 text-xs font-bold text-tinta-suave">minutos</p>
+          </div>
+          <div class="flex-1 px-2">
+            <p class="cifras text-3xl font-black tracking-tight text-verde-hondo dark:text-verde">
+              {EXAM.passing}
+            </p>
+            <p class="mt-0.5 text-xs font-bold text-tinta-suave">para pasar</p>
+          </div>
+        </div>
+
+        <a href="/examen" class="boton boton-verde anillo-contraste mt-5 w-full text-lg">
+          Hacer el simulacro
+          <Icono nombre="flecha" tamano={20} />
+        </a>
+      </div>
+    </Riel>
+
+    <Riel numero={2} titulo="Después, cierra el tema que traes flojo">
+      <p class="text-tinta-suave leading-relaxed">
+        Cada tema con todas sus preguntas, la respuesta correcta y por qué lo es.
+        Se lee de corrido, sin cronómetro encima.
+      </p>
+
+      <ul class="mt-5 space-y-2">
+        {
+          temas.map((t) => (
+            <li>
+              <a
+                href={`/guia/${t.slug}`}
+                class="group ficha flex items-center gap-4 p-4 transition-transform hover:-translate-y-0.5"
+              >
+                <span class="grid size-11 shrink-0 place-items-center rounded-xl bg-azul/12 text-azul-hondo dark:text-azul">
+                  <Icono nombre={t.id} tamano={22} />
+                </span>
+                <span class="min-w-0 flex-1">
+                  <span class="block font-extrabold tracking-tight">{t.label}</span>
+                  <span
+                    class="mt-1.5 block h-1.5 rounded-full bg-lienzo-hondo"
+                    aria-hidden="true"
+                  >
+                    <span
+                      class="block h-full rounded-full bg-azul"
+                      style={`width:${Math.round((t.total / maxTema) * 100)}%`}
+                    />
+                  </span>
+                </span>
+                <span class="cifras shrink-0 text-sm font-bold text-tinta-suave">
+                  {t.total}
+                </span>
+                <Icono
+                  nombre="flecha"
+                  tamano={18}
+                  class="shrink-0 text-tinta-tenue transition-transform group-hover:translate-x-0.5"
+                />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </Riel>
+
+    <BloqueAnuncio hueco="portada" />
+
+    <Riel numero={3} titulo="Y aprende las señales de memoria">
+      <p class="text-tinta-suave leading-relaxed">
+        Son <strong class="font-extrabold text-tinta">{illustratedSigns.length}</strong>
+        y aparecen en una de cada tres preguntas. Estas son las oficiales del Manual
+        de Señalización Vial, no dibujos parecidos.
+      </p>
+
+      <div class="ficha mt-5 overflow-hidden">
+        <ul class="grid grid-cols-6 gap-px bg-linde sm:grid-cols-9">
+          {
+            muestra.map((s) => (
+              <li class="bg-lienzo">
+                <a
+                  href={`/senales/${s.slug}`}
+                  class="placa p-2 transition-colors hover:bg-lienzo-hondo"
+                  title={s.name}
+                >
+                  <img src={s.image} alt={s.name} width="48" height="48" loading="lazy" />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <div class="flex flex-col gap-2 p-4 sm:flex-row">
+          <a href="/senales" class="boton boton-hueco flex-1">Ver el catálogo</a>
+          <a href="/quiz-senales" class="boton boton-azul anillo-contraste flex-1">
+            Jugar el quiz
+          </a>
+        </div>
+      </div>
+    </Riel>
+
+    <Riel numero={4} titulo="El día de tu cita, llévala en el bolsillo" ultimo>
+      <p class="text-tinta-suave leading-relaxed">
+        Esta página practica, pero no se acuerda de ti: al recargar empiezas de
+        cero. La app sí lleva la cuenta de en qué fallas, te repite esas preguntas
+        hasta que dejes de fallarlas y funciona sin internet en la fila del módulo.
+      </p>
+
+      <ul class="mt-5 grid gap-2 sm:grid-cols-2">
+        {
+          [
+            "Guarda tu racha y tu historial",
+            "Detecta tus áreas débiles solo",
+            "Repaso espaciado de lo que fallas",
+            "Funciona sin conexión",
+          ].map((v) => (
+            <li class="flex items-start gap-2.5 text-sm font-semibold">
+              <span class="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-verde text-white">
+                <Icono nombre="palomita" tamano={12} />
+              </span>
+              {v}
+            </li>
+          ))
+        }
+      </ul>
+
+      <a
+        href={PLAY_STORE_URL}
+        target="_blank"
+        rel="noopener"
+        class="boton boton-verde anillo-contraste mt-6 w-full text-lg"
+      >
+        <Icono nombre="play" tamano={20} />
+        Descargar en Google Play
+      </a>
+      <p class="mt-2.5 text-center text-xs text-tinta-tenue">
+        Android · gratis · las preguntas son las mismas de esta página
+      </p>
+    </Riel>
+  </div>
+</Layout>

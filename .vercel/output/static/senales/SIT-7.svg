@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 459.35998 459.36001"
+   version="1.1"
+   id="svg13"
+   sodipodi:docname="SIT-7_30x30.svg"
+   width="459.35999"
+   height="459.35999"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview13"
+     pagecolor="#50505000"
+     bordercolor="#ffffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050ff"
+     inkscape:zoom="0.44946067"
+     inkscape:cx="226.93866"
+     inkscape:cy="543.98531"
+     inkscape:window-width="1366"
+     inkscape:window-height="697"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg13" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">
+      .cls-1 {
+        fill: #32479d;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-3, .cls-5 {
+        stroke: #000;
+      }
+
+      .cls-3, .cls-5, .cls-6 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-5, .cls-6 {
+        fill: none;
+      }
+
+      .cls-6 {
+        stroke: #fff;
+      }
+
+      .cls-7 {
+        font-family: ArialMT, Arial;
+        font-size: 215.8px;
+      }
+    </style>
+  </defs>
+  <g
+     id="sit_Fondo_del_tablero"
+     data-name="sit_Fondo del tablero"
+     transform="translate(-190.84,-6.3000002)">
+    <g
+       id="HATCH">
+      <rect
+         class="cls-1"
+         x="203.56"
+         y="19.030001"
+         width="433.92001"
+         height="433.92001"
+         rx="18.33"
+         ry="18.33"
+         id="rect3" />
+    </g>
+  </g>
+  <g
+     id="sit_Pictograma_y_filete"
+     data-name="sit_Pictograma y filete"
+     transform="translate(-190.84,-6.3000002)">
+    <g
+       id="HATCH-2"
+       data-name="HATCH">
+      <path
+         class="cls-2"
+         d="m 221.9,452.94 h 397.25 c 10.13,0 18.33,-8.21 18.33,-18.33 V 37.36 c 0,-10.13 -8.21,-18.33 -18.33,-18.33 H 221.9 c -10.13,0 -18.33,8.21 -18.33,18.33 v 397.25 c 0,10.13 8.21,18.33 18.33,18.33 m 0,12.23 h 397.25 c 16.88,0 30.56,-13.68 30.56,-30.56 V 37.36 C 649.71,20.48 636.03,6.8 619.15,6.8 H 221.9 c -16.88,0 -30.56,13.68 -30.56,30.56 v 397.25 c 0,16.88 13.68,30.56 30.56,30.56 z"
+         id="path6" />
+    </g>
+    <g
+       id="LWPOLYLINE">
+      <rect
+         class="cls-5"
+         x="191.34"
+         y="6.8000002"
+         width="458.35999"
+         height="458.35999"
+         rx="30.559999"
+         ry="30.559999"
+         id="rect6" />
+    </g>
+    <g
+       id="LWPOLYLINE-2"
+       data-name="LWPOLYLINE">
+      <rect
+         class="cls-6"
+         x="203.56"
+         y="19.030001"
+         width="433.92001"
+         height="433.92001"
+         rx="18.33"
+         ry="18.33"
+         id="rect7" />
+    </g>
+    <g
+       id="HATCH-3"
+       data-name="HATCH">
+      <path
+         class="cls-2"
+         d="m 510.2,131.36 h 29.89 v 39.86 H 510.2 v -39.86 m 0,89.68 v -39.86 h 29.89 v 39.83 l -29.89,0.03 M 540.09,76.55 H 510.2 c 0,-8.25 6.69,-14.95 14.95,-14.95 8.26,0 14.95,6.69 14.95,14.95 m -39.87,29.9 h 49.82 V 81.54 h -49.82 v 24.91 m -19.92,139.5 v 169.39 h 89.68 V 245.95 H 480.31 M 365.72,96.48 c -14.34,2.8 -24.74,15.28 -24.91,29.89 H 400.6 C 400.44,111.76 390.04,99.27 375.69,96.48 V 76.55 h 9.96 v -9.96 h -9.96 v -9.96 h -9.96 v 9.96 h -9.96 v 9.96 h 9.96 v 19.93 m -24.93,69.75 h 59.79 V 136.34 H 340.8 v 29.89 m 114.59,69.75 H 286 c 9.06,-25.49 29.11,-45.54 54.6,-54.6 46.78,-16.62 98.17,7.82 114.8,54.6 m 34.87,0 h 69.75 V 111.42 h -69.75 c 0,0 0,124.56 0,124.56 m -19.93,9.97 H 271.05 c 0,0 0,169.39 0,169.39 h 64.77 v -64.77 c 0,-19.26 15.61,-34.88 34.88,-34.88 19.27,0 34.88,15.61 34.88,34.88 v 64.77 h 64.77 V 245.95 Z"
+         id="path7" />
+    </g>
+    <g
+       id="LWPOLYLINE-3"
+       data-name="LWPOLYLINE">
+      <path
+         class="cls-6"
+         d="M 470.34,245.95 H 271.05 c 0,0 0,169.39 0,169.39 h 64.77 v -64.77 c 0,-19.26 15.61,-34.88 34.88,-34.88 19.27,0 34.88,15.61 34.88,34.88 v 64.77 h 64.77 V 245.95 Z"
+         id="path8" />
+    </g>
+    <g
+       id="LWPOLYLINE-4"
+       data-name="LWPOLYLINE">
+      <polyline
+         class="cls-6"
+         points="490.27 235.98 560.02 235.98 560.02 111.43 490.27 111.43 490.27 235.98"
+         id="polyline8" />
+    </g>
+    <g
+       id="LWPOLYLINE-5"
+       data-name="LWPOLYLINE">
+      <path
+         class="cls-6"
+         d="M 455.39,235.98 H 286 c 9.06,-25.49 29.11,-45.54 54.6,-54.6 46.78,-16.62 98.17,7.82 114.8,54.6 z"
+         id="path9" />
+    </g>
+    <g
+       id="LWPOLYLINE-6"
+       data-name="LWPOLYLINE">
+      <polyline
+         class="cls-6"
+         points="340.8 166.23 400.59 166.23 400.59 136.34 340.8 136.34 340.8 166.23"
+         id="polyline9" />
+    </g>
+    <g
+       id="LWPOLYLINE-7"
+       data-name="LWPOLYLINE">
+      <path
+         class="cls-6"
+         d="m 365.72,96.48 c -14.34,2.8 -24.74,15.28 -24.91,29.89 H 400.6 C 400.44,111.76 390.04,99.27 375.69,96.48 V 76.55 h 9.96 v -9.96 h -9.96 v -9.96 h -9.96 v 9.96 h -9.96 v 9.96 h 9.96 v 19.93 z"
+         id="path10" />
+    </g>
+    <g
+       id="LWPOLYLINE-8"
+       data-name="LWPOLYLINE">
+      <polyline
+         class="cls-6"
+         points="480.31 245.95 480.31 415.34 569.99 415.34 569.99 245.95 480.31 245.95"
+         id="polyline10" />
+    </g>
+    <g
+       id="LWPOLYLINE-9"
+       data-name="LWPOLYLINE">
+      <polyline
+         class="cls-6"
+         points="500.23 106.45 550.06 106.45 550.06 81.54 500.23 81.54 500.23 106.45"
+         id="polyline11" />
+    </g>
+    <g
+       id="LWPOLYLINE-10"
+       data-name="LWPOLYLINE">
+      <path
+         class="cls-6"
+         d="M 540.09,76.55 H 510.2 c 0,-8.25 6.69,-14.95 14.95,-14.95 8.26,0 14.95,6.69 14.95,14.95 z"
+         id="path11" />
+    </g>
+    <g
+       id="LWPOLYLINE-11"
+       data-name="LWPOLYLINE">
+      <polyline
+         class="cls-6"
+         points="510.2 221.04 510.2 181.19 540.09 181.19 540.09 221.02 510.2 221.04"
+         id="polyline12" />
+    </g>
+    <g
+       id="LWPOLYLINE-12"
+       data-name="LWPOLYLINE">
+      <polyline
+         class="cls-6"
+         points="510.2 131.36 540.09 131.36 540.09 171.22 510.2 171.22 510.2 131.36"
+         id="polyline13" />
+    </g>
+  </g>
+</svg>

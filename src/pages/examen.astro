@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BloqueAnuncio from "../components/BloqueAnuncio.astro";
+import Simulador from "../components/Simulador";
+import { EXAM, PLAY_STORE_URL } from "../config";
+import { examQuestions, signBySlug } from "../data";
+
+const banco = examQuestions.map((q) => {
+  const s = q.sign ? signBySlug(q.sign) : undefined;
+  return {
+    id: q.id,
+    text: q.text,
+    options: q.options,
+    answer: q.answer,
+    explanation: q.explanation,
+    image: s?.image ?? undefined,
+  };
+});
+---
+
+<Layout
+  title="Simulacro del examen de manejo EdoMex — 10 preguntas, 5 minutos"
+  description={`Simulacro gratis del examen teórico de licencia del Estado de México: ${EXAM.questions} preguntas, ${EXAM.minutes} minutos y ${EXAM.passing} aciertos para aprobar.`}
+  canonical="/examen"
+>
+  <Simulador
+    client:load
+    banco={banco}
+    total={EXAM.questions}
+    aprobar={EXAM.passing}
+    minutos={EXAM.minutes}
+    titulo="Simulacro del examen"
+    playStoreUrl={PLAY_STORE_URL}
+    otraRuta={{ href: "/quiz-senales", label: "Quiz de señales" }}
+  />
+  <BloqueAnuncio hueco="resultado" />
+</Layout>
