@@ -3,6 +3,7 @@ import "../styles/global.css";
 import { SITE, ADSENSE_CLIENT } from "../config";
 import Encabezado from "../components/Encabezado.astro";
 import PieDePagina from "../components/PieDePagina.astro";
+import Analytics from "@vercel/analytics/astro";
 
 interface Props {
   title: string;
@@ -24,7 +25,9 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(canonical, SITE.url).href;
-const tituloCompleto = title.includes(SITE.name) ? title : `${title} | ${SITE.name}`;
+const tituloCompleto = title.includes(SITE.name)
+  ? title
+  : `${title} | ${SITE.name}`;
 const ogImage = new URL("/og.png", SITE.url).href;
 ---
 
@@ -32,7 +35,10 @@ const ogImage = new URL("/og.png", SITE.url).href;
 <html lang="es-MX">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <title>{tituloCompleto}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
@@ -51,8 +57,10 @@ const ogImage = new URL("/og.png", SITE.url).href;
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    {/* La fuente entra antes que cualquier otra cosa: es el único recurso que
-        bloquea la primera impresión de texto. */}
+    {
+      /* La fuente entra antes que cualquier otra cosa: es el único recurso que
+        bloquea la primera impresión de texto. */
+    }
     <link
       rel="preload"
       href="/fonts/nunito-latin-var.woff2"
@@ -61,8 +69,10 @@ const ogImage = new URL("/og.png", SITE.url).href;
       crossorigin
     />
 
-    {/* Fija el tema antes del primer pintado para que nadie vea el destello
-        blanco al entrar de noche. */}
+    {
+      /* Fija el tema antes del primer pintado para que nadie vea el destello
+        blanco al entrar de noche. */
+    }
     <script is:inline>
       (() => {
         try {
@@ -114,6 +124,7 @@ const ogImage = new URL("/og.png", SITE.url).href;
       finish review, the verdict, DESIGN.md, and every shipping raster carrying
       its provenance.
     -->
+    <Analytics />
     <a
       href="#principal"
       class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-xl focus:bg-verde focus:px-4 focus:py-2 focus:font-extrabold focus:text-white"
@@ -123,7 +134,12 @@ const ogImage = new URL("/og.png", SITE.url).href;
 
     <Encabezado />
 
-    <main id="principal" class={anchoLibre ? "flex-1" : "flex-1 mx-auto w-full max-w-3xl px-5 py-10"}>
+    <main
+      id="principal"
+      class={anchoLibre
+        ? "flex-1"
+        : "flex-1 mx-auto w-full max-w-3xl px-5 py-10"}
+    >
       <slot />
     </main>
 
